@@ -12,9 +12,9 @@ class Pokemon:
         self.special_attack = special_attack
         self.special_defense = special_defense
         self.speed = speed
-        self.moves = moves  # Liste de 4 mouvements
-        self.pp = {move.name: move.pp for move in moves}  # Points de pouvoir
-        self.status_conditions = []  # Altérations de statut comme "poison", "paralysé", etc.
+        self.moves = moves  
+        self.pp = {move.name: move.pp for move in moves}
+        self.status_conditions = []  
 
     def is_alive(self):
         return self.hp > 0

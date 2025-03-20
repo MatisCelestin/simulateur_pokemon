@@ -4,13 +4,12 @@ from pokemon import Pokemon
 from battle import battle_turn
 
 def create_pokemon():
-    # Création de Pokémon et de leurs attaques
     move1 = Move("Flamèche", "Fire", 40, 100, "Physical", 10)
     move2 = Move("Griffe", "Normal", 40, 100, "Physical", 10)
     move3 = Move("Hydrocanon", "Water", 110, 80, "Special", 5)
     move4 = Move("Morsure", "Dark", 60, 100, "Physical", 10)
 
-    # Charizard (Feu) et Blastoise (Eau)
+    
     charizard = Pokemon("Charizard", 50, "Fire", 150, 100, 80, 100, 80, 100, [move1, move2, move3, move4])
     blastoise = Pokemon("Blastoise", 50, "Water", 160, 90, 100, 120, 100, 80, [move1, move2, move3, move4])
     
@@ -19,16 +18,16 @@ def create_pokemon():
 def main():
     charizard, blastoise = create_pokemon()
 
-    # Choix initial du Pokémon actif
+    
     player_pokemon = charizard
     opponent_pokemon = blastoise
 
-    # Simulation d'un combat
+ 
     while player_pokemon.is_alive() and opponent_pokemon.is_alive():
         print(f"\n{player_pokemon.name} (HP: {player_pokemon.hp}/{player_pokemon.max_hp}) contre {opponent_pokemon.name} (HP: {opponent_pokemon.hp}/{opponent_pokemon.max_hp})")
         battle_turn(player_pokemon, opponent_pokemon)
 
-        # Permet au joueur de changer de Pokémon (si possible)
+       
         if player_pokemon.is_alive():
             print("\nVoulez-vous changer de Pokémon ? (o/n)")
             choice = input()
